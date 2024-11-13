@@ -1,0 +1,36 @@
+{% extends 'portfolio/basetemp.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News page</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/news_styles.css' %}">
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="section top-section">
+            <h1>Page to explore News API connection</h1> 
+            <h3>It is returned {{ news.count }} news</h3>
+        </div>
+
+        <div class="section bottom-section">
+            {% for article in news %}
+            <div class="col-ig-4 col-md-6">
+                <p class="preserve-text">
+                    <br>{{ article }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+{% endblock %}

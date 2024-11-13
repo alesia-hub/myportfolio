@@ -1,0 +1,61 @@
+.navbar .navbar-brand {
+    color: #030005 !important;
+    background-color: #daa0f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around; /* Space evenly between links */
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.top-section {
+    display: flex;
+    background-color: #440267;
+    justify-content: center;
+    height: 20%;
+    
+}
+.preserve-text {
+    white-space: normal;
+    padding: 10px;
+    width: 150px;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: flex;
+    background-color: #f5e6fd;
+    height: 80%;
+    justify-content: left;
+    flex-direction: row; /* Arrange items in rows */
+    flex-wrap: wrap; /* Wrap items to the next row if they exceed the container width */
+    gap: 10px; /* Optional: add spacing between items */
+}
+.grid-item {
+    padding: 10px;
+    /* background-color: #f0f0f0; */
+    border: 1px solid #424141;
+  }
+
+/* Optional: Add scroll behavior if content overflows */
+.section {
+    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+}

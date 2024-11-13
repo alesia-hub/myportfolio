@@ -46,6 +46,13 @@ multiple superusers can be created.
 In order for the new model been available under Admin side and for the rest of the project to be used, it needs to be added under `admin.py` file for each app which is going to use this model.
 Checkout file `portfolio/admin.py` to see how it was done. 
 
+**NOTE**: After adding each new model do not forget to run Migration! 
+Run following command for migration: 
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
 ## Managing Images:
 All Images should be saved in the root/media/[app_name]/[your_fodlder_name] folder. 
 

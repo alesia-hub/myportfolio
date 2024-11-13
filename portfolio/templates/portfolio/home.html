@@ -1,0 +1,47 @@
+{% extends 'portfolio/basetemp.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_styles.css' %}">
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="section top-section">
+            <h1>Alesia Personal portfolio </h1>
+            <img src="{% static 'portfolio/Avatar_AlesiaP.jpg' %}" class="img-fluid" height=200>
+            
+        </div>
+
+        <div class="grid-container">
+            {% for project in projects %}
+            
+            <div class="grid-item">
+                {% if project.url %}
+                <a href="{{ project.url }}">
+                  <img src="{{ project.image.url }}" height=200 class="img-fluid">
+                </a>
+                {% else %}
+            
+                <img src="{{ project.image.url }}" height=200 class="img-fluid">
+                {% endif %}
+                <p class="preserve-text">
+                    <h3>{{ project.title }}</h3>
+                    {{ project.description }}
+                </p>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+{% endblock %}

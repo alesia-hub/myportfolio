@@ -1,0 +1,54 @@
+.navbar .navbar-brand {
+    color: #030005 !important;
+    background-color: #daa0f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around; /* Space evenly between links */
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.top-section {
+    display: flex;
+    background-color: #AD49E1;
+    justify-content: center;
+
+}
+
+.preserve-text {
+    white-space: normal;
+    padding: 10px;
+    width: 150px;
+    overflow: hidden;
+}
+
+
+.bottom-section {
+    display: flex;
+    background-color: #f1bed6;
+    height: 80%;
+    justify-content: center;
+}
+
+/* Optional: Add scroll behavior if content overflows */
+.section {
+    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+}

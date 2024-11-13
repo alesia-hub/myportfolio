@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_styles.css' %}">
+    
+    
+</head>
+
+<body>
+    <!-- As a link -->
+<nav class="navbar navbar-extend-md navbar-light">
+    <div class="container">
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <a role="button" href="{% url 'home' %}" class="btn btn-primary">Home</a>
+
+                <a href="{% static 'portfolio/AlesiaPerera_Resume_2024.docx' %}">Resume</a>
+                <a class="navbar-brand" href="https://www.linkedin.com/in/alesia-perera-1b10b818/" target="_blank">LinkedIn</a>
+                <a class="navbar-brand" href="https://github.com/alesia-hub?tab=repositories" target="_blank">GitHub</a>
+                
+                <a role="button" href="{% url 'all_news' %}" class="btn btn-primary">News</a>
+        </div>
+    </div>
+  </nav>
+
+ <!-- Adding each separate page under this section below: -->
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
