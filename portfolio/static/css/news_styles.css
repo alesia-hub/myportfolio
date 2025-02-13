@@ -39,13 +39,6 @@ body {
     overflow: hidden;
 }
 
-.bottom-section {
-    display: flex;
-    background-color: #f5e6fd;
-    justify-content: left;
-    height: 80%;
-}
-
 /* Optional: Add scroll behavior if content overflows */
 .section {
     overflow-y: auto; /* Allows vertical scrolling if content overflows */

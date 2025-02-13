@@ -13,23 +13,25 @@
     
 </head>
 
-<body>
+<body style="background-color: #EFB6C8;">
 
-    <div class="container">
-        <div class="section top-section">
-            <h1>Alesia Personal portfolio </h1>
-            <img src="{% static 'portfolio/Avatar_AlesiaP.jpg' %}" class="img-fluid" height=200>
+    <div class="form-container">
+        <div class="form-header" style="background-color: #441752; justify-content:s center;">
+           <!-- <img src="{% static 'portfolio/Autumn.jpg' %}" class="img-fluid" height=300 >-->
+            <h2 class="form-title" >Personal Page of Alesia Perera with references to developped projects. </h2>
             
         </div>
 
-        <div class="grid-container">
+        <div class="grid-container" style="background-color: #A888B5;">
             {% for project in projects %}
             
             <div class="grid-item">
                 {% if project.url %}
                 <a href="{{ project.url }}">
                   <img src="{{ project.image.url }}" height=200 class="img-fluid">
+                  <!--<a href="{{ project.get_internal_url }}">{{ project.name }}</a>-->
                 </a>
+
                 {% else %}
             
                 <img src="{{ project.image.url }}" height=200 class="img-fluid">

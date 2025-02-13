@@ -9,17 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News page</title>
     <!-- Link to the external CSS file -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/news_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_styles.css' %}">
     
 </head>
 
 <body>
-
     <div class="container">
         <div class="section top-section">
             <h1>Page to explore News API connection</h1> 
-            <h3>It is returned {{ news.count }} news</h3>
+            <h3>It is returned "{{ news.count }}" news</h3>
         </div>
+        <form>
+            <label>How many news title to display: </label> <br>
+            <input type="text" name="number_news" maxlength="10"><br>
+            <input type="button" value="Request News">
+        </form>
+
 
         <div class="section bottom-section">
             {% for article in news %}

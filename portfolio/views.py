@@ -1,11 +1,16 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Project
 
 def home(request):
     '''Function to style up and support all functions from Home page'''
     my_projects =  Project.objects.all()
     return render(request, 'portfolio/home.html', {'projects':my_projects})
+
+def internal_page(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+    return render(request, 'blog.html', {'project': project})
+
 
 def all_news(request):
     base_url = 'https://newsapi.org/v2/everything'
