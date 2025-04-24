@@ -19,20 +19,32 @@ def all_news(request):
     params = {
         'q':'tesla',
         'sortBy': 'published',
-        'from': '2024-10-02',
+        # 'from': '2024-10-02',
         'apiKey': api_key
     }
 
-    response = requests.get(base_url, params=params, timeout=300)
-    all_news = response.json()
-    # print(all_news)
-    articles = []
-    print("Status code from the run: ", all_news['status'])
-    if all_news['status'] == 'ok':
-        print("Number of articles: ", len(all_news['articles']))
-        for i in all_news['articles']:
-            articles.append(i['title'])
-            #print(all_news['articles'][0]['description'])
+    if 'number_news' in request.POST:
+        number = request.POST['number_news']
+        print("Got the Number of Articles from the page: ", number)
+        response = requests.get(base_url, params=params, timeout=300)
+        all_news = response.json()
+        # print(all_news)
+        articles = []
+        print("Status code from the run: ", all_news['status'])
+        if all_news['status'] == 'ok':
+            print("Number of articles: ", len(all_news['articles']))
+            print("First 2 FULL articles: ")
+            # for a in all_news['articles']:
+            #     print(a['title'])
+            for i in all_news['articles']:
+                articles.append(i['title'])
+            print("First 10 articles: ",articles[:10])
+            return render(request, 'portfolio/newspage.html', {"message": "Dispalying some news: ",
+                                                            "news":articles[:int(number)]})
+        else:
+            print("Failed API call. See error bellow: \n", all_news['message'])
+            return render(request, 'portfolio/newspage.html', {"message":"Could not get News via API."})
     else:
-        print("Failed API call. See error bellow: \n", all_news['message'])
-    return render(request, 'portfolio/newspage.html', {"news":articles[1:6]})
+        return render(request, 'portfolio/newspage.html', {"message":"Please enter Number of News to return."})    
+
+

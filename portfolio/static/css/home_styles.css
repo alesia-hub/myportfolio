@@ -77,6 +77,7 @@ body {
     height: 80%;
     justify-content: left;
     flex-direction: row;
+    background-color: #A888B5;
     /* Arrange items in rows */
     flex-wrap: wrap;
     /* Wrap items to the next row if they exceed the container width */

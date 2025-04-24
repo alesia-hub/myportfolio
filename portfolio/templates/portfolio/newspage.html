@@ -13,27 +13,33 @@
     
 </head>
 
-<body>
-    <div class="container">
-        <div class="section top-section">
+<body style="background-color: #EFB6C8;">
+    <div class="form-container">
+        <div class="section top-section"  style="background-color: #441752; justify-content:s center;">
             <h1>Page to explore News API connection</h1> 
-            <h3>It is returned "{{ news.count }}" news</h3>
         </div>
-        <form>
-            <label>How many news title to display: </label> <br>
-            <input type="text" name="number_news" maxlength="10"><br>
-            <input type="button" value="Request News">
-        </form>
+
+        <div class="grid-container">
+            <h3> {{ message }}</h3>
+            <form method="post" >
+                {% csrf_token %}
+                <label>How many news title to display: </label> <br>
+                <input type="text" name="number_news" maxlength="10"><br>
+                <button type="submit" value="Request News">Submit</button>
+            </form>
 
 
-        <div class="section bottom-section">
-            {% for article in news %}
-            <div class="col-ig-4 col-md-6">
-                <p class="preserve-text">
-                    <br>{{ article }}
-                </p>
+            <div class="section bottom-section">
+
+                {% for article in news %}
+                <div class="news-item" style="width: 60%; background-color: aqua;
+                text-align: left; text-indent: 80%;">
+                    <p class="preserve-text">
+                        <br>{{ article }}
+                    </p>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </body>
