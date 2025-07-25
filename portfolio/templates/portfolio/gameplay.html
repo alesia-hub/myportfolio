@@ -1,0 +1,60 @@
+{% extends 'portfolio/basetemp.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_styles.css' %}">
+    
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Now can pleay the game!</h1> 
+        <h3>Try to play the 1% quetions game below. Good Luck! </h3>
+        
+        <div class="grid-container">
+            <form method="post" >
+                {% csrf_token %}
+                <label>Select the question level: </label> <br>
+                <input type="hidden" name="form_type" value="level_form">
+                <select name="questionLevel" onchange="handleSelection()">
+                    <option value="90%">90%</option>
+                    <option value="80%">80%</option>
+                    <option value="70%">70%</option>
+                    <option value="60%">60%</option>
+                    <option value="50%">50%</option>
+                </select>
+
+                <button type="submit" value="Request Question">Try it!</button>
+            </form> <br>
+            <form method="post" >
+                 {% csrf_token %}
+                <label>Your question: </label> <br>
+                <input type="hidden" name="form_type" value="answer_form">
+                <p style="color: rgb(97, 1, 141); font-weight: bold;"> {{ question }}</p>
+                <p> {{ your_answer }} </p>
+                <p> {{ answers }} </p>
+                {% if is_correct is not none %}
+                <p style="color: blue; font-weight: bold;">
+                    {% if is_correct %}
+                            ✅ Correct!
+                        {% else %}
+                            ❌ Incorrect.
+                        {% endif %}
+                </p>
+                {% endif %}
+                <input type="text" name="answer" placeholder="Answer"><br>
+                <button type="submit" value="Request Answer">Check Answer</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}

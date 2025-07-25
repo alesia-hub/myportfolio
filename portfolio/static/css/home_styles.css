@@ -23,6 +23,7 @@
 
 body {
     margin: 0;
+    background-color: #EFB6C8;
     /* Optional: Remove default margin for full-page background */
     font-family: Arial, sans-serif;
     /* Optional: Set a consistent font */
@@ -32,12 +33,21 @@ body {
 }
 
 .form-container {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border: 1px solid #ccc;
+    background-color: #c02dfa;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.top-section {
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    background-color: #c02dfa;
+    justify-content: left;
+    border-radius: 8px;
+    overflow: hidden;
 }
 .form-header {
     width: 100%;
@@ -74,10 +84,10 @@ body {
 
 .grid-container {
     display: flex;
-    height: 80%;
+    height: 90%;
     justify-content: left;
     flex-direction: row;
-    background-color: #A888B5;
+    background-color: #e6bbf7;
     /* Arrange items in rows */
     flex-wrap: wrap;
     /* Wrap items to the next row if they exceed the container width */

@@ -24,5 +24,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.home, name='home'),
     path('news/', views.all_news, name='all_news'),
+    path('questions/', views.game_questions, name='game_questions'),
+    path('gameplay/', views.play_game, name='play_game'),
+    path('aboutprojects/', views.about_projects, name='about_projects'),
     path('blog/', include('blog.urls')),  # this is redirecting to all urls under blog folder
 ]  + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

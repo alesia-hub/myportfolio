@@ -1,12 +1,21 @@
 # My portfolio Website
 
-Created using Django with python.
+My little personal project which made me feel alive... 
+Best favourite technologies utilized: 
+- Django with python
+    - including Django build in DB models
+- HTML + CSS 
+- MongoDB with pymongo library
+
+
+## Technical Details:
+
 To run application on your local, run following command:
 ```bash
 python manage.py runserver
 ```
 
-## Starting New Project details:
+### Starting New Project details:
 
 - navigate to ne new project folder
 - in terminal run django command:
@@ -23,9 +32,7 @@ python manage.py startapp portfolio
 
 - **NOTE:** after adding new app, add these apps under `settings.py` file > INSTALLED_APPS
 
-
-## Managing Admin user access:
-
+### Managing Admin user access:
 In order to use admin part of the application, need to create superuser first.
 Run following command in terminal to do that:
 ```bash
@@ -39,10 +46,10 @@ To change the passowrd run following:
 python manage.py changepassword
 ```
 
-multiple superusers can be created. 
+Multiple superusers can be created. 
 
 
-## Managing Models:
+### Managing Models:
 In order for the new model been available under Admin side and for the rest of the project to be used, it needs to be added under `admin.py` file for each app which is going to use this model.
 Checkout file `portfolio/admin.py` to see how it was done. 
 
@@ -53,10 +60,10 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-## Managing Images:
+### Managing Images:
 All Images should be saved in the root/media/[app_name]/[your_fodlder_name] folder. 
 
-### Add following variables under `settings.py` file:
+#### Add following variables under `settings.py` file:
 - **MEDIA_ROOT** : contains a default root folder for all images
 - **NEDIA_URL** : contains statis URLs for images 
 

@@ -1,0 +1,45 @@
+{% extends 'portfolio/basetemp.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_styles.css' %}">
+    
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Here are some details on other API projects implementd.</h1> 
+        <h3>As these are APIs the best way to test them is to run via Postman or Insomnia other API friendly tools :) </h3>
+
+        <div class="grid-container">
+            <h3> {{ message }}</h3>
+
+            <div class="section bottom-section">
+            <div class="grid-container" style="background-color: #A888B5;">
+                {% for project in all_projects %}
+                
+                <div class="grid-item">
+                    <label>New Project" </label>
+                    {% if project.url %}
+                        <a href="{{ project.url }}"> </a>
+                    {% endif %}
+                    <p class="preserve-text">
+                        <h3>{{ project.title }}</h3>
+                        {{ project.description }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
