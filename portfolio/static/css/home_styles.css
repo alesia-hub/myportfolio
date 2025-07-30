@@ -18,12 +18,12 @@
 }
 
 .navbar a:hover {
-    background-color: #9c36bb;
+    background-color: #B13BFF;
 }
 
 body {
     margin: 0;
-    background-color: #EFB6C8;
+    background-color: #F4E7E1;
     /* Optional: Remove default margin for full-page background */
     font-family: Arial, sans-serif;
     /* Optional: Set a consistent font */
@@ -35,16 +35,17 @@ body {
 .form-container {
     width: 90%;
     margin: 20px auto;
-    border: 1px solid #ccc;
-    background-color: #c02dfa;
+    color: #F4E7E1;
+    border: 1px solid #090040;
+    background-color: #471396;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .top-section {
     margin: 20px auto;
-    border: 1px solid #ccc;
-    background-color: #c02dfa;
+    border: 1px solid #090040;
+    background-color: #471396;
     justify-content: left;
     border-radius: 8px;
     overflow: hidden;
@@ -77,36 +78,42 @@ body {
 
 .preserve-text {
     white-space: normal;
-    padding: 10px;
-    width: 100px;
+    padding: 5px;
+    width: 90%;
     overflow: hidden;
 }
 
 .grid-container {
     display: flex;
-    height: 90%;
+    /*height: 90%;*/
+    color: black;
     justify-content: left;
     flex-direction: row;
-    background-color: #e6bbf7;
+    background-color: #B13BFF;
     /* Arrange items in rows */
     flex-wrap: wrap;
     /* Wrap items to the next row if they exceed the container width */
-    gap: 15px;
+    gap: 10px;
     /* Optional: add spacing between items */
+    box-sizing: border-box;
 }
 
 .grid-item {
     padding: 1%;
-    background-color: #8174A0; 
-    border: 1px solid #441752;
-    width: 30%;
+    background-color: #e6bbf7; 
+    border: 2px solid #090040;
+    flex: 1 1 28%;   /* Grow, shrink, and set base width */
+    max-width: 30%; /* Prevent stretching too far */
+    /* height: 50%; */
 }
 
 .grid-item img {
-    width: 80%;  /* Makes the image stretch to fit the grid item width */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: scale-down; /* Ensures the image covers the area */
-    border-radius: 5px; /* Optional: Rounds corners for a nice look */
+    width: 100%;           /* Fit image to the width of its grid item */
+    /* height: auto;          /* Maintain aspect ratio */
+    display: block;        /* Removes any inline spacing below image */
+    object-fit: contain;     /* (Optional) Crops image to fill space nicely */
+    border-radius: 4px;    /* Optional: rounded corners */
+    max-height: 200px;     /* Limit vertical growth */
 }
 
 /* Optional: Add scroll behavior if content overflows */

@@ -9,6 +9,7 @@ class Project(models.Model):
     # storing image of our project into specific folder:
     image = models.ImageField(upload_to='portfolio/images/')
     url = models.URLField(blank=True)
+    order = models.IntegerField(default=10)
 
     objects: Manager['Project']  # type hint for static checkers
 

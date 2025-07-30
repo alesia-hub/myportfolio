@@ -13,8 +13,7 @@
     
 </head>
 
-<body style="background-color: #EFB6C8;">
-
+<body>
     <div class="form-container">
         <div class="form-header" style="background-color: #441752; justify-content:s center;">
            <!-- <img src="{% static 'portfolio/Autumn.jpg' %}" class="img-fluid" height=300 >-->
@@ -22,19 +21,18 @@
             
         </div>
 
-        <div class="grid-container" style="background-color: #A888B5;">
+        <div class="grid-container">
             {% for project in projects %}
             
             <div class="grid-item">
                 {% if project.url %}
                 <a href="{{ project.url }}">
-                  <img src="{{ project.image.url }}" height=200 class="img-fluid">
+                  <img src="{{ project.image.url }}" class="img-fluid">
                   <!--<a href="{{ project.get_internal_url }}">{{ project.name }}</a>-->
                 </a>
-
                 {% else %}
             
-                <img src="{{ project.image.url }}" height=200 class="img-fluid">
+                <img src="{{ project.image.url }}" class="img-fluid">
                 {% endif %}
                 <p class="preserve-text">
                     <h3>{{ project.title }}</h3>

@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from utils.DBConnect import MongoConnect
 from .models import Project, Blog
+# from blog.models import Blog
 
 dbClient = MongoConnect("mongodbVSCodePlaygroundDB")
 CollectionGame = "GameData"
@@ -23,7 +24,7 @@ def about_projects(request):
     # all_projects = Blog.objects.order_by('-date')[:5]
     print(all_projects)
     return render(request, 'portfolio/aboutprojects.html',
-                  {'message': "List of all implemented projects",
+                  {'message': "List of additional implemented projects",
                    'all_projects': all_projects})
 
 

@@ -20,23 +20,16 @@
 
         <div class="grid-container">
             <h3> {{ message }}</h3>
-
-            <div class="section bottom-section">
-            <div class="grid-container" style="background-color: #A888B5;">
-                {% for project in all_projects %}
-                
+            <div class="grid-container">
+                {% for project in all_projects %}    
                 <div class="grid-item">
-                    <label>New Project" </label>
-                    {% if project.url %}
-                        <a href="{{ project.url }}"> </a>
-                    {% endif %}
-                    <p class="preserve-text">
+                    <!-- <p>  class="preserve-text" -->
+                    <p>
                         <h3>{{ project.title }}</h3>
                         {{ project.description }}
                     </p>
                 </div>
                 {% endfor %}
-            </div>
             </div>
         </div>
     </div>
