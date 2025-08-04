@@ -13,7 +13,7 @@
     
 </head>
 
-<body style="background-color: #EFB6C8;">
+<body>
     <div class="form-container">
         <h1>Collecting data for the GameData</h1> 
         <h3>Here you can add more question for 1% Quetion game. Questions are been saved in MongoDB and wil lbe used for the future game on another page. </h3>
@@ -22,14 +22,14 @@
             <h3> {{ message }}</h3>
             <form method="post" >
                 {% csrf_token %}
-                <label>Please enter Question details below na dclick Submit: </label> <br>
-                <input type="text" name="Question" placeholder="Enter Question here"> -- What is a Question? <br>
-                <input type="text" name="level" placeholder="90%"> -- What level it is? 90%, 80% etc. <br>
-                <input type="text" name="option1" placeholder="First Option"> -- Possible answer. <br>
+                <label>Fill up question fields and press Save question:</label> <br>
+                <input type="text" name="Question" placeholder="Enter Question here"> <br>
+                <input type="text" name="level" placeholder="Question level"> Example 90%, 80% etc. <br>
+                <input type="text" name="option1" placeholder="First Option"> <br>
                 <input type="text" name="option2" placeholder="Second Option"><br>
                 <input type="text" name="option3" placeholder="Third Option"><br>
                 <input type="text" name="option4" placeholder="Forth Option"><br>
-                <input type="text" name="answer" placeholder="Answer"> -- And give actual answer.<br>
+                <input type="text" name="answer" placeholder="Answer"> <br>
                             
                 <!-- <input type="text" name="number_news" maxlength="10"><br> -->
                 <button type="submit" value="Request News">Save question</button>
