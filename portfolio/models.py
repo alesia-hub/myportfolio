@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.db.models.manager import Manager
+from django.core.validators import MaxLengthValidator
 
 # Create your models here.
 class Project(models.Model):
@@ -23,7 +24,7 @@ class Project(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateField()
-    description = models.CharField(max_length=250)
+    description = models.TextField(validators=[MaxLengthValidator(2000)]) # models.CharField(max_length=250)
     # soring image of our project into specific folder:
     url = models.URLField(blank=True)
 
