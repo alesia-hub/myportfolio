@@ -5,9 +5,6 @@ from utils.DBConnect import MongoConnect
 from .models import Project, Blog
 # from blog.models import Blog
 
-dbClient = MongoConnect("mongodbVSCodePlaygroundDB")
-CollectionGame = "GameData"
-
 def home(request):
     '''Function to style up and support all functions from Home page'''
     my_projects =  Project.objects.all()
@@ -73,8 +70,8 @@ def all_news(request):
                       {"message":"Please enter Number of News to return."})
 
 def game_questions(request):
-    # dbClient = MongoConnect("mongodbVSCodePlaygroundDB")
-    # CollectionGame = "GameData"
+    dbClient = MongoConnect("mongodbVSCodePlaygroundDB")
+    CollectionGame = "GameData"
 
     if 'Question' in request.POST:
         question = request.POST['Question']
@@ -94,6 +91,7 @@ def game_questions(request):
         
         print("*** Got All Details:", _record)
 
+
         dbClient.insert_into_collection(CollectionGame, _record)
 
         return render(request, 'portfolio/questions.html', \
@@ -104,8 +102,8 @@ def game_questions(request):
 
 
 def play_game(request):
-    # filters = {"level": "90%"}
-    # _question = dbClient.read_doc_from_collection(CollectionGame, filters)
+    dbClient = MongoConnect("mongodbVSCodePlaygroundDB")
+    CollectionGame = "GameData"
     if request.method == 'POST':
         form_type = request.POST.get('form_type')
         
