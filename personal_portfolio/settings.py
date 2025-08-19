@@ -16,17 +16,18 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(BASE_DIR / '.env')  # load .env from root
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*8*0#m6-g=_ngpuq8uysv8-mm8u%^s5r8h!)6kg0+wxai)zpqy"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['apscientist.pythonanywhere.com']
+ALLOWED_HOSTS = ['apscientist.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -126,7 +127,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(BASE_DIR / '.env')  # load .env from root
 
 # You can now access os.environ values like:
 MONGO_URI = os.getenv("MONGO_URI")
